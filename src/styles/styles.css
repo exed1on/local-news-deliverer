@@ -1,0 +1,118 @@
+body {
+    background-color: #fff;
+}
+
+h1 {
+    color: #000;
+}
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    background-color: #fff;
+    position: relative;
+}
+
+.app-header h1 {
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.news-list {
+    margin-top: 20px;
+}
+
+.input-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.loading-spinner {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top-color: green;
+    border-right-color: green;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 1;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+ul.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%; /* Set dropdown to the exact width of the input */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 2;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+ul.dropdown li {
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ccc;
+    transition: background-color 0.2s ease;
+}
+
+ul.dropdown li:last-child {
+    border-bottom: none;
+}
+
+ul.dropdown li:hover {
+    background-color: #e0e0e0;
+}
+
+ul.dropdown {
+    scroll-behavior: smooth;
+}
+
+.main-container {
+    padding: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+label {
+    font-size: 14px;
+    color: #333;
+}
