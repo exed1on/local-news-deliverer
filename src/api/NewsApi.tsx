@@ -20,7 +20,7 @@ axios.defaults.baseURL = 'https://local-news-deliverer-api.onrender.com';
 
 export const fetchCities = async (): Promise<City[]> => {
     try {
-        const response = await axios.get('/cities');
+        const response = await axios.get<City[]>('/cities');
         return response.data;
     } catch (error) {
         console.error('Error fetching cities:', error);
@@ -30,7 +30,7 @@ export const fetchCities = async (): Promise<City[]> => {
 
 export const fetchNewsForCity = async (city?: string, state?: string, includeGlobalNews: boolean = false): Promise<NewsArticle[]> => {
     try {
-        const response = await axios.get('/news/search', { 
+        const response = await axios.get<NewsArticle[]>('/news/search', { 
             params: { 
                 cityName: city, 
                 stateName: state,
@@ -44,10 +44,9 @@ export const fetchNewsForCity = async (city?: string, state?: string, includeGlo
     }
 };
 
-
 export const searchCities = async (name?: string, stateName?: string): Promise<City[]> => {
     try {
-        const response = await axios.get('/cities/search', { params: { name, stateName } });
+        const response = await axios.get<City[]>('/cities/search', { params: { name, stateName } });
         return response.data;
     } catch (error) {
         console.error('Error searching cities:', error);
